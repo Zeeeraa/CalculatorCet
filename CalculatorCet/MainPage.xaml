@@ -32,8 +32,6 @@
                 <Button Text="9" x:Name="DigitNine"  Clicked="Digit_Clicked" Grid.Column="2"></Button>
 
 
-
-
                 <Button Text="4" x:Name="DigitFour"  Clicked="Digit_Clicked" Grid.Row="1" ></Button>
                 <Button Text="5" x:Name="DigitFive"  Clicked="Digit_Clicked" Grid.Row="1" Grid.Column="1" ></Button>
                 <Button Text="6" x:Name="DigitSix"  Clicked="Digit_Clicked" Grid.Row="1" Grid.Column="2" ></Button>
@@ -46,7 +44,7 @@
 
                 <Button Text="0" x:Name="DigitZero"  Clicked="Digit_Clicked" Grid.Row="3" ></Button>
                 <Button Text="," x:Name="DecimalButton" Clicked="DecimalButton_Clicked" Grid.Row="3" Grid.Column="1"></Button>
-                <Button Text="=" x:Name="EqualButton" Clicked="EqualButton_Clicked"  Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" ></Button>
+                <Button Text="=" x:Name="EqualButton" Clicked="EqualButton_Clicked"  Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2" ></Button>
                 
                     <Button Grid.Row="0" Grid.Column="3"
                         x:Name="AddButton" Text="+" Clicked="AddButton_Clicked"
@@ -67,7 +65,6 @@
                 <Button Text="M-" x:Name="MemorySubtractButton" Clicked="MemorySubtractButton_Clicked" Grid.Row="5" Grid.Column="1"></Button>
                 <Button Text="MS" x:Name="MemoryStoreButton" Clicked="MemoryStoreButton_Clicked" Grid.Row="5" Grid.Column="2"></Button>
                 <Button Text="Del" x:Name="DeleteButton" Clicked="DeleteButton_Clicked" Grid.Row="5" Grid.Column="3"></Button>
-
                 <Button Text="CE" x:Name="CEButton" Clicked="CEButton_Clicked"  Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" ></Button>
                 <Button Text="C" x:Name="CButton" Clicked="CButton_Clicked"  Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2" ></Button>
 
