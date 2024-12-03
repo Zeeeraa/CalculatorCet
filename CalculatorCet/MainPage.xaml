@@ -44,7 +44,7 @@
 
                 <Button Text="0" x:Name="DigitZero"  Clicked="Digit_Clicked" Grid.Row="3" ></Button>
                 <Button Text="," x:Name="DecimalButton" Clicked="DecimalButton_Clicked" Grid.Row="3" Grid.Column="1"></Button>
-                <Button Text="=" x:Name="EqualButton" Clicked="EqualButton_Clicked"  Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2" ></Button>
+                <Button Text="=" x:Name="EqualButton" Clicked="EqualButton_Clicked"  Grid.Row="3" Grid.Column="2"></Button>
                 
                     <Button Grid.Row="0" Grid.Column="3"
                         x:Name="AddButton" Text="+" Clicked="AddButton_Clicked"
