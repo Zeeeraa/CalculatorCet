@@ -12,8 +12,11 @@
 
 
         double FirstNumber;
+        double Memory = 0;
         bool isFirstNumberAfterOperator = true;
+        bool hasDecimal = false;
         Operator PreviousOperator = Operator.None;
+        bool isOperatorJustPressed = false;
 
 
         private void SubtractButton_Clicked(object sender, EventArgs e)
@@ -43,7 +46,18 @@
             PreviousOperator = Operator.Add;
 
         }
+        private void HandleOperatorChange(Operator newOperator)
+        {
+            if (isOperatorJustPressed)
+            {
+                PreviousOperator = newOperator; // Sadece operatör değiştir
+                return;
+            }
 
+            DoCalculation();
+            PreviousOperator = newOperator;
+            isOperatorJustPressed = true;
+        }
         void DoCalculation()
         {
 
@@ -76,11 +90,11 @@
         private void Digit_Clicked(object sender, EventArgs e)
         {
             Button digitButton = sender as Button;
-            if(isFirstNumberAfterOperator)
+            if(isFirstNumberAfterOperator || isOperatorJustPressed)
             {
                 Display.Text = digitButton.Text;
                 isFirstNumberAfterOperator = false;
-
+                isOperatorJustPressed = false;
             }
             else
             {
@@ -95,7 +109,66 @@
             PreviousOperator = Operator.None;
 
         }
+        private void DeleteButton_Clicked(object sender, EventArgs e)
+        {
+            if (Display.Text.Length > 1)
+            {
+                Display.Text = Display.Text.Substring(0, Display.Text.Length - 1);
+            }
+            else
+            {
+                Display.Text = "0";
+                isFirstNumberAfterOperator = true;
+            }
+        }
 
+        private void DecimalButton_Clicked(object sender, EventArgs e)
+        {
+            if (!Display.Text.Contains(","))
+            {
+                if (isFirstNumberAfterOperator || string.IsNullOrEmpty(Display.Text))
+                {
+                    Display.Text = "0,";
+                }
+                else
+                {
+                    Display.Text += ",";
+                }
+                isOperatorJustPressed = false;
+            }
+        }
+
+        private void MemoryAddButton_Clicked(object sender, EventArgs e)
+        {
+            double currentValue;
+            if (double.TryParse(Display.Text, out currentValue))
+            {
+                Memory += currentValue;
+            }
+        }
+
+        private void MemorySubtractButton_Clicked(object sender, EventArgs e)
+        {
+            double currentValue;
+            if (double.TryParse(Display.Text, out currentValue))
+            {
+                Memory -= currentValue;
+            }
+        }
+
+        private void MemoryStoreButton_Clicked(object sender, EventArgs e)
+        {
+            double currentValue;
+            if (double.TryParse(Display.Text, out currentValue))
+            {
+                Memory = currentValue;
+            }
+        }
+        private void MemoryRecallButton_Clicked(object sender, EventArgs e)
+        {
+            Display.Text = Memory.ToString();
+            isFirstNumberAfterOperator = true;
+        }
         private void CEButton_Clicked(object sender, EventArgs e)
         {
             Display.Text = "0";
@@ -108,6 +181,7 @@
             FirstNumber = 0;
             PreviousOperator= Operator.None;
             isFirstNumberAfterOperator = true;
+            hasDecimal = false;
         }
     }
 

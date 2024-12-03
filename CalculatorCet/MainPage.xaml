@@ -15,6 +15,7 @@
                     <RowDefinition Height="60"></RowDefinition>
                     <RowDefinition Height="60"></RowDefinition>
                     <RowDefinition Height="60"></RowDefinition>
+                    <RowDefinition Height="60"></RowDefinition>
                     <RowDefinition Height="60">
                     </RowDefinition>
                 </Grid.RowDefinitions>
@@ -44,6 +45,7 @@
 
 
                 <Button Text="0" x:Name="DigitZero"  Clicked="Digit_Clicked" Grid.Row="3" ></Button>
+                <Button Text="," x:Name="DecimalButton" Clicked="DecimalButton_Clicked" Grid.Row="3" Grid.Column="1"></Button>
                 <Button Text="=" x:Name="EqualButton" Clicked="EqualButton_Clicked"  Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" ></Button>
                 
                     <Button Grid.Row="0" Grid.Column="3"
@@ -61,6 +63,10 @@
                 <Button  Grid.Row="3" Grid.Column="3"
          x:Name="DivideButton"     Text="/"        Clicked="DivideButton_Clicked"
          VerticalOptions="Fill" />
+                <Button Text="M+" x:Name="MemoryAddButton" Clicked="MemoryAddButton_Clicked" Grid.Row="5" Grid.Column="0"></Button>
+                <Button Text="M-" x:Name="MemorySubtractButton" Clicked="MemorySubtractButton_Clicked" Grid.Row="5" Grid.Column="1"></Button>
+                <Button Text="MS" x:Name="MemoryStoreButton" Clicked="MemoryStoreButton_Clicked" Grid.Row="5" Grid.Column="2"></Button>
+                <Button Text="Del" x:Name="DeleteButton" Clicked="DeleteButton_Clicked" Grid.Row="5" Grid.Column="3"></Button>
 
                 <Button Text="CE" x:Name="CEButton" Clicked="CEButton_Clicked"  Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" ></Button>
                 <Button Text="C" x:Name="CButton" Clicked="CButton_Clicked"  Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2" ></Button>
